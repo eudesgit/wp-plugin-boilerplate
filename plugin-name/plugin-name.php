@@ -19,7 +19,7 @@
  * Author:            Eudes
  * Author URI:        http://www.website.com
  * License:           Apache 2
- * Text Domain:       plugin-name
+ * Text Domain:       plugin_name
  */
 
 // If this file is called directly, abort.
@@ -27,9 +27,9 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define('PLUGIN_NAME', 'plugin-name');
+require_once plugin_dir_path( __FILE__ ) . 'class.plugin-name.php';
+
+define('PLUGIN_NAME', 'plugin_name');
 define('PLUGIN_VERSION', '1.0.0');
 
-require_once plugin_dir_path( __FILE__ ) . 'class.plugin.php';
-
-plugin_run();
+plugin_name_run();

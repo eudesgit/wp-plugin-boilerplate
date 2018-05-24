@@ -1,13 +1,13 @@
 <?php
 
 /**
- * The class for admin features.
+ * The public-facing class of the plugin.
  *
  * @package    Plugin
- * @subpackage Plugin/admin
+ * @subpackage Plugin/public
  * @author     Eudes
  */
-class Plugin_Admin {
+class Plugin_Name_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -25,7 +25,7 @@ class Plugin_Admin {
 	 * @access   protected
 	 * @var      string    $plugin_version   Plugin's version.
 	 */
-    private $plugin_version;    
+    private $plugin_version;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -48,7 +48,7 @@ class Plugin_Admin {
 	 */
 	public function enqueue_styles() {
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-admin.css', array(), $this->plugin_version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/public.css', array(), $this->plugin_version, 'all' );
 
 	}
 
@@ -59,7 +59,7 @@ class Plugin_Admin {
 	 */
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-admin.js', array( 'jquery' ), $this->plugin_version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/public.js', array( 'jquery' ), $this->plugin_version, false );
 
 	}
 

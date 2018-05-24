@@ -126,13 +126,13 @@ class Plugin_Name {
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( __FILE__ ) . 'admin/class.plugin.admin.php';
+		require_once plugin_dir_path( __FILE__ ) . 'admin/class.plugin-name.admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( __FILE__  ) . 'public/class.plugin.public.php';
+		require_once plugin_dir_path( __FILE__  ) . 'public/class.plugin-name.public.php';
 
 	}
 
@@ -226,7 +226,7 @@ class Plugin_Name {
  * 
  * @since    1.0.0
  */
-function plugin_run ( ) {
+function plugin_name_run ( ) {
     $p = new Plugin_Name();
     $p->run();
 }
