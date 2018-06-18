@@ -9,7 +9,6 @@
  *
  * @link              http://www.website.com
  * @since             1.0.0
- * @package           Plugin_Name
  *
  * @wordpress-plugin
  * Plugin Name:       Plugin Name

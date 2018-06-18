@@ -3,8 +3,7 @@
 /**
  * The public-facing class of the plugin.
  *
- * @package    Plugin
- * @subpackage Plugin/public
+ * @package    Plugin/public
  * @author     Eudes
  */
 class Plugin_Name_Public {

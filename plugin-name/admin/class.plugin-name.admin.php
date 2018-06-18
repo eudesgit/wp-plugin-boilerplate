@@ -3,8 +3,7 @@
 /**
  * The class for admin features.
  *
- * @package    Plugin
- * @subpackage Plugin/admin
+ * @package    Plugin/admin
  * @author     Eudes
  */
 class Plugin_Name_Admin {

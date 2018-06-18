@@ -8,7 +8,7 @@
  *
  * @link       http://www.website.com
  * @since      1.0.0
- * @package    Plugin
+ * @package    Plugin_Name
  * @author     Eudes
  */
 class Plugin_Name {
