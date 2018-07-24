@@ -1,12 +1,13 @@
 <?php
-
 /**
  * The class for admin features.
  *
- * @package    Plugin/admin
  * @author     Eudes
  */
-class Plugin_Name_Admin {
+
+namespace Plugin_Name\Admin_Side;
+
+class Admin_Side {
 
 	/**
 	 * The ID of this plugin.

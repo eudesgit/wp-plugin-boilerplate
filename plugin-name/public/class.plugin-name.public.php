@@ -1,12 +1,13 @@
 <?php
-
 /**
  * The public-facing class of the plugin.
  *
- * @package    Plugin/public
  * @author     Eudes
  */
-class Plugin_Name_Public {
+
+namespace Plugin_Name\Public_Side;
+
+class Public_Side {
 
 	/**
 	 * The ID of this plugin.

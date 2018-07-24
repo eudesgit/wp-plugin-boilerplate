@@ -8,9 +8,11 @@
  *
  * @link       http://www.website.com
  * @since      1.0.0
- * @package    Plugin_Name
  * @author     Eudes
  */
+
+namespace Plugin_Name;
+
 class Plugin_Name {
 
 	/**
@@ -91,7 +93,7 @@ class Plugin_Name {
 	private function define_admin_hooks ( ) {
 
         // Plugin Admin class
-		$plugin_admin = new Plugin_Admin($this->get_plugin_name(), $this->get_plugin_version());
+		$plugin_admin = new Admin_Side\Admin_Side($this->get_plugin_name(), $this->get_plugin_version());
 
 		$this->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' ); // plugin_admin->enqueue_styles()
 		$this->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' ); // plugin_admin->enqueue_scripts()
@@ -108,7 +110,7 @@ class Plugin_Name {
 	private function define_public_hooks ( ) {
 
         // Plugin Public class
-		$plugin_public = new Plugin_Public($this->get_plugin_name(), $this->get_plugin_version());
+		$plugin_public = new Public_Side\Public_Side($this->get_plugin_name(), $this->get_plugin_version());
 
 		$this->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' ); // plugin_public->enqueue_styles()
 		$this->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' ); // plugin_public->enqueue_scripts()
