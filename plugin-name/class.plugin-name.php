@@ -95,8 +95,8 @@ class Plugin_Name {
         // Plugin Admin class
 		$plugin_admin = new Admin_Side\Admin_Side($this->get_plugin_name(), $this->get_plugin_version());
 
-		$this->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' ); // plugin_admin->enqueue_styles()
-		$this->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' ); // plugin_admin->enqueue_scripts()
+		$this->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles'); // plugin_admin->enqueue_styles()
+		$this->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts'); // plugin_admin->enqueue_scripts()
 
 	}
 
@@ -112,8 +112,8 @@ class Plugin_Name {
         // Plugin Public class
 		$plugin_public = new Public_Side\Public_Side($this->get_plugin_name(), $this->get_plugin_version());
 
-		$this->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' ); // plugin_public->enqueue_styles()
-		$this->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' ); // plugin_public->enqueue_scripts()
+		$this->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles'); // plugin_public->enqueue_styles()
+		$this->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts'); // plugin_public->enqueue_scripts()
 
 	}
 
@@ -149,7 +149,7 @@ class Plugin_Name {
 	 * @param    int                  $accepted_args    Optional. The number of arguments that should be passed to the $callback. Default is 1.
 	 */
 	protected function add_action ( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {
-		$this->actions = $this->add( $this->actions, $hook, $component, $callback, $priority, $accepted_args );
+		$this->actions = $this->add($this->actions, $hook, $component, $callback, $priority, $accepted_args);
 	}
 
 	/**
@@ -163,7 +163,7 @@ class Plugin_Name {
 	 * @param    int                  $accepted_args    Optional. The number of arguments that should be passed to the $callback. Default is 1
 	 */
 	protected function add_filter ( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {
-		$this->filters = $this->add( $this->filters, $hook, $component, $callback, $priority, $accepted_args );
+		$this->filters = $this->add($this->filters, $hook, $component, $callback, $priority, $accepted_args);
     }
     
 	/**
@@ -211,11 +211,11 @@ class Plugin_Name {
 	public function run_adds ( ) {
 
 		foreach ( $this->filters as $hook ) {
-			add_filter( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
+			add_filter($hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args']);
 		}
 
 		foreach ( $this->actions as $hook ) {
-			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
+			add_action($hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args']);
 		}
 
 	}    

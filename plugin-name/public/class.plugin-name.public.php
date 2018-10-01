@@ -48,7 +48,7 @@ class Public_Side {
 	 */
 	public function enqueue_styles() {
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/public.css', array(), $this->plugin_version, 'all' );
+		wp_enqueue_style(PN_PREFIX . 'public-styles', plugin_dir_url( __FILE__ ) . 'css/public.css', array(), $this->plugin_version, 'all' );
 
 	}
 
@@ -59,7 +59,7 @@ class Public_Side {
 	 */
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/public.js', array( 'jquery' ), $this->plugin_version, false );
+		wp_enqueue_script(PN_PREFIX . 'public-scripts', plugin_dir_url( __FILE__ ) . 'js/public.js', array( 'jquery' ), $this->plugin_version, false );
 
 	}
 

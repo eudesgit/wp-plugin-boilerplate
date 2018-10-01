@@ -30,7 +30,12 @@ if ( ! defined( 'WPINC' ) ) {
 
 require_once plugin_dir_path( __FILE__ ) . 'class.plugin-name.php';
 
-define('PLUGIN_NAME', 'plugin_name');
-define('PLUGIN_VERSION', '1.0.0');
+// Name: Plugin Name
+// Initials: PN
+define('PN_TITLE', 'Plugin Name');
+define('PN_NAME', 'plugin_name');
+define('PN_SLUG', 'plugin-name');
+define('PN_PREFIX', 'pn_');
+define('PN_VERSION',  '0.0.1');
 
 plugin_name_run();
