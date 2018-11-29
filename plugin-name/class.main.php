@@ -13,7 +13,10 @@
 
 namespace Plugin_Name;
 
-class Plugin_Name {
+//use Admin_Side;
+//use Public_Side;
+
+class Main {
 
 	/**
 	 * The unique identifier of this plugin.
@@ -22,7 +25,7 @@ class Plugin_Name {
 	 * @access   protected
 	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
-    private $plugin_name;
+    //private $plugin_name;
     
 	/**
 	 * The current version of this plugin.
@@ -31,7 +34,7 @@ class Plugin_Name {
 	 * @access   protected
 	 * @var      string    $plugin_version   Plugin's version.
 	 */
-    private $plugin_version;
+    //private $plugin_version;
 
 	/**
 	 * The array of actions registered with WordPress.
@@ -62,8 +65,8 @@ class Plugin_Name {
 	 */
 	public function __construct ( ) {
         
-        $this->plugin_name = PLUGIN_NAME;
-        $this->plugin_version = PLUGIN_VERSION;
+        //$this->plugin_name = PLUGIN_NAME;
+        //$this->plugin_version = PLUGIN_VERSION;
 
         $this->actions = array();
 		$this->filters = array();
@@ -79,8 +82,8 @@ class Plugin_Name {
     // Getters & Setters
     //
 
-    public function get_plugin_name         ( ) { return $this->plugin_name; }
-    public function get_plugin_version      ( ) { return $this->plugin_version; }
+    //public function get_plugin_name         ( ) { return $this->plugin_name; }
+    //public function get_plugin_version      ( ) { return $this->plugin_version; }
 
 
 	/**
@@ -93,7 +96,7 @@ class Plugin_Name {
 	private function define_admin_hooks ( ) {
 
         // Plugin Admin class
-		$plugin_admin = new Admin_Side\Admin_Side($this->get_plugin_name(), $this->get_plugin_version());
+		$plugin_admin = new Admin_Side\Admin_Side();
 
 		$this->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles'); // plugin_admin->enqueue_styles()
 		$this->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts'); // plugin_admin->enqueue_scripts()
@@ -110,7 +113,7 @@ class Plugin_Name {
 	private function define_public_hooks ( ) {
 
         // Plugin Public class
-		$plugin_public = new Public_Side\Public_Side($this->get_plugin_name(), $this->get_plugin_version());
+		$plugin_public = new Public_Side\Public_Side();
 
 		$this->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles'); // plugin_public->enqueue_styles()
 		$this->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts'); // plugin_public->enqueue_scripts()
@@ -229,6 +232,6 @@ class Plugin_Name {
  * @since    1.0.0
  */
 function plugin_name_run ( ) {
-    $p = new Plugin_Name();
-    $p->run();
+    $m = new Main();
+    $m->run();
 }

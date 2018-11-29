@@ -28,14 +28,13 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-require_once plugin_dir_path( __FILE__ ) . 'class.plugin-name.php';
+require_once plugin_dir_path( __FILE__ ) . 'class.main.php';
 
-// Name: Plugin Name
-// Initials: PN
+// Title: Plugin Name
 define('PN_TITLE', 'Plugin Name');
 define('PN_NAME', 'plugin_name');
 define('PN_SLUG', 'plugin-name');
-define('PN_PREFIX', 'pn_');
+define('PN_PREFIX', 'pn');
 define('PN_VERSION',  '0.0.1');
 
 plugin_name_run();
