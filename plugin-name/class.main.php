@@ -13,28 +13,10 @@
 
 namespace Plugin_Name;
 
-//use Admin_Side;
-//use Public_Side;
+use Plugin_Name\Admin_Side\Admin_Main;
+use Plugin_Name\Public_Side\Public_Main;
 
 class Main {
-
-	/**
-	 * The unique identifier of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
-	 */
-    //private $plugin_name;
-    
-	/**
-	 * The current version of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $plugin_version   Plugin's version.
-	 */
-    //private $plugin_version;
 
 	/**
 	 * The array of actions registered with WordPress.
@@ -64,9 +46,6 @@ class Main {
 	 * @since    1.0.0
 	 */
 	public function __construct ( ) {
-        
-        //$this->plugin_name = PLUGIN_NAME;
-        //$this->plugin_version = PLUGIN_VERSION;
 
         $this->actions = array();
 		$this->filters = array();
@@ -76,14 +55,6 @@ class Main {
 		$this->define_public_hooks();
 
     }
-    
-
-    //
-    // Getters & Setters
-    //
-
-    //public function get_plugin_name         ( ) { return $this->plugin_name; }
-    //public function get_plugin_version      ( ) { return $this->plugin_version; }
 
 
 	/**
@@ -96,7 +67,7 @@ class Main {
 	private function define_admin_hooks ( ) {
 
         // Plugin Admin class
-		$plugin_admin = new Admin_Side\Admin_Side();
+		$plugin_admin = new Admin_Main();
 
 		$this->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles'); // plugin_admin->enqueue_styles()
 		$this->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts'); // plugin_admin->enqueue_scripts()
@@ -113,7 +84,7 @@ class Main {
 	private function define_public_hooks ( ) {
 
         // Plugin Public class
-		$plugin_public = new Public_Side\Public_Side();
+		$plugin_public = new Public_Main();
 
 		$this->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles'); // plugin_public->enqueue_styles()
 		$this->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts'); // plugin_public->enqueue_scripts()

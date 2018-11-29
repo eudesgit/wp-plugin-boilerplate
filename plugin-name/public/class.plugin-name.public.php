@@ -7,25 +7,7 @@
 
 namespace Plugin_Name\Public_Side;
 
-class Public_Side {
-
-	/**
-	 * The ID of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
-	 */
-    //private $plugin_name;
-    
-	/**
-	 * The current version of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $plugin_version   Plugin's version.
-	 */
-    //private $plugin_version;
+class Public_Main {
 
 	/**
 	 * Initialize the class and set its properties.
@@ -35,9 +17,6 @@ class Public_Side {
      * @param      string    $plugin_version    The version of the plugin.
 	 */
 	public function __construct ( ) {
-
-        //$this->plugin_name = $plugin_name;
-        //$this->plugin_version = $plugin_version;
 
 	}
 
