@@ -27,7 +27,7 @@ class Admin_Main {
 	 */
 	public function enqueue_styles ( ) {
 
-		wp_enqueue_style(PN_PREFIX . '-admin-styles', plugin_dir_url( __FILE__ ) . 'css/admin.css', array(), PN_VERSION, 'all');
+		wp_enqueue_style(PN_PREFIX . '-admin-styles', plugin_dir_url( __FILE__ ) . 'css/admin.css', [], PN_VERSION, 'all');
 
 	}
 
@@ -38,7 +38,7 @@ class Admin_Main {
 	 */
 	public function enqueue_scripts ( ) {
 
-		wp_enqueue_script(PN_PREFIX . '-admin-scripts', plugin_dir_url( __FILE__ ) . 'js/admin.js', array( 'jquery' ), PN_VERSION, false);
+		wp_enqueue_script(PN_PREFIX . '-admin-scripts', plugin_dir_url( __FILE__ ) . 'js/admin.js', ['jquery'], PN_VERSION, false);
 
 	}
 

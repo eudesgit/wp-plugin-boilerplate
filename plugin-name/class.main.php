@@ -47,8 +47,8 @@ class Main {
 	 */
 	public function __construct ( ) {
 
-        $this->actions = array();
-		$this->filters = array();
+        $this->actions = [];
+		$this->filters = [];
 
 		$this->load_dependencies(); // Classes and Includes loader
 		$this->define_admin_hooks();
@@ -102,13 +102,13 @@ class Main {
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( __FILE__ ) . 'admin/class.plugin-name.admin.php';
+		require_once plugin_dir_path( __FILE__ ) . 'admin/class.admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( __FILE__  ) . 'public/class.plugin-name.public.php';
+		require_once plugin_dir_path( __FILE__  ) . 'public/class.public.php';
 
 	}
 
@@ -174,7 +174,7 @@ class Main {
 	 * @since    1.0.0
 	 */
 	public function run ( ) {
-		$this->run_adds ( );
+		$this->run_adds();
     }
     
 	/**
