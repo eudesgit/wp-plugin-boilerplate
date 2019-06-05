@@ -32,7 +32,6 @@ require_once plugin_dir_path( __FILE__ ) . 'class.main.php';
 
 // Title: Plugin Name
 define('PN_TITLE', 'Plugin Name');
-define('PN_NAME', 'plugin_name');
 define('PN_SLUG', 'plugin-name');
 define('PN_PREFIX', 'pn');
 define('PN_VERSION',  '0.0.1');
