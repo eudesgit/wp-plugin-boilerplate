@@ -15,6 +15,7 @@ namespace Plugin_Name;
 
 use Plugin_Name\Admin_Side\Admin_Main;
 use Plugin_Name\Public_Side\Public_Main;
+use Plugin_Name\Widgets\Widget_Main;
 
 class Main {
 
@@ -52,7 +53,8 @@ class Main {
 
 		$this->load_dependencies(); // Classes and Includes loader
 		$this->define_admin_hooks();
-		$this->define_public_hooks();
+        $this->define_public_hooks();
+        $this->define_widgets();
 
     }
 
@@ -62,11 +64,9 @@ class Main {
 	 * of the plugin.
 	 *
 	 * @since    1.0.0
-	 * @access   private
 	 */
 	private function define_admin_hooks ( ) {
 
-        // Plugin Admin class
 		$plugin_admin = new Admin_Main();
 
 		$this->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles'); // plugin_admin->enqueue_styles()
@@ -79,17 +79,31 @@ class Main {
 	 * of the plugin.
 	 *
 	 * @since    1.0.0
-	 * @access   private
 	 */
 	private function define_public_hooks ( ) {
 
-        // Plugin Public class
 		$plugin_public = new Public_Main();
 
 		$this->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles'); // plugin_public->enqueue_styles()
 		$this->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts'); // plugin_public->enqueue_scripts()
 
-	}
+    }
+    
+    /**
+     * Register widgets
+     * 
+     * @since 1.0.0
+     */
+	private function define_widgets ( ) {
+    
+		$plugin_widget = new Widget_Main();
+
+        $this->add_action('wp_enqueue_scripts', $plugin_widget, 'enqueue_styles');
+        $this->add_action('wp_enqueue_scripts', $plugin_widget, 'enqueue_scripts');
+        
+        // Widgets
+        $this->add_action('widgets_init', $plugin_widget, 'init_widgets');
+    }
 
 	/**
 	 * Load the required dependencies for this plugin.
@@ -99,16 +113,21 @@ class Main {
 	 */
 	private function load_dependencies ( ) {
 
-		/**
+		/*
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( __FILE__ ) . 'admin/class.admin.php';
+		require_once plugin_dir_path(__FILE__) . 'admin/class.admin.php';
 
-		/**
+		/*
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( __FILE__  ) . 'public/class.public.php';
+        require_once plugin_dir_path(__FILE__) . 'public/class.public.php';
+        
+		/*
+		 * The class responsible for defining all widgets
+		 */
+		require_once plugin_dir_path(__FILE__) . 'widgets/class.widget.php';        
 
 	}
 

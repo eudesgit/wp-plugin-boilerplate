@@ -13,15 +13,13 @@ class Public_Main {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since      1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-     * @param      string    $plugin_version    The version of the plugin.
 	 */
 	public function __construct ( ) {
 
 	}
 
 	/**
-	 * Register the stylesheets for the public-facing side of the site.
+	 * Register the stylesheets.
 	 *
 	 * @since    1.0.0
 	 */
@@ -32,7 +30,7 @@ class Public_Main {
 	}
 
 	/**
-	 * Register the JavaScript for the public-facing side of the site.
+	 * Register the JavaScript.
 	 *
 	 * @since    1.0.0
 	 */
