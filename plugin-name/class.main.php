@@ -70,7 +70,11 @@ class Main {
 		$plugin_admin = new Admin_Main();
 
 		$this->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles'); // plugin_admin->enqueue_styles()
-		$this->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts'); // plugin_admin->enqueue_scripts()
+        $this->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts'); // plugin_admin->enqueue_scripts()
+        
+        // Settings page
+        $this->add_action('admin_menu', $plugin_admin, 'add_menu_page_settings_action'); 
+        $this->add_action('admin_init', $plugin_admin, 'add_settings_action');
 
 	}
 

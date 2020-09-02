@@ -8,7 +8,6 @@
  * that starts the plugin.
  *
  * @link              http://www.website.com
- * @since             1.0.0
  *
  * @wordpress-plugin
  * Plugin Name:       Plugin Name
@@ -24,11 +23,9 @@
 namespace Plugin_Name;
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+if ( ! defined('WPINC') ) die;
 
-require_once plugin_dir_path( __FILE__ ) . 'class.main.php';
+require_once plugin_dir_path(__FILE__) . 'class.main.php';
 
 // Title: Plugin Name
 define('PN_TITLE', 'Plugin Name');
