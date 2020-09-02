@@ -40,4 +40,13 @@ class Widget_Main {
 
 	}
 
+	/**
+	 * Register the widgets
+	 *
+	 * @since    1.0.0
+	 */
+	public function init_widgets ( ) {
+
+	}
+
 }
